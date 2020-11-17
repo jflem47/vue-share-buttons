@@ -38,6 +38,7 @@ export default {
   components: { Icon },
   props: {
     url: { type: String, default: getDocumentHref },
+    shareDescription: { type: String },
     btnText: { type: String, default: "Facebook" },
     modalWidth: { type: Number, default: 500 },
     modalHeight: { type: Number, default: 500 },
@@ -66,7 +67,7 @@ export default {
       );
       const url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
         this.$props.url
-      )}`;
+      )}&quote=${this.$props.shareDescription}`;
 
       return this.$props.isBlank
         ? window.open(url, "_blank")
