@@ -50,7 +50,7 @@ export default {
       );
       const url = `https://twitter.com/share?url=${encodeURIComponent(
         this.$props.url
-      )}&text=${encodeURIComponent(this.$props.description)}`;
+      )}&text=${encodeURIComponent(this.$props.description)}%0D%0A`;
 
       return this.$props.isBlank
         ? window.open(url, "_blank")
